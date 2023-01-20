@@ -21,6 +21,7 @@ export default function AlertModal({useContents, content}: AlertModalProps) {
       columnTitles: content.columnTitles,
       rowContents: content.rowContents
     });
+    (e.target as any)[0].value = "";
   }
   
   return (
