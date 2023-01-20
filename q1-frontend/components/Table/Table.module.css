@@ -18,3 +18,21 @@
     flex: 1 1 0px;
     flex-direction: column;
 }
+
+.updateContainer {
+    display: flex;
+    flex: 1 1 0px;
+    flex-direction: column;
+}
+
+.rowUpdate {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+}
+
+.rowUpdateDate {
+    font-size: 70%;
+    color: blue;
+    margin-top: auto;
+}
