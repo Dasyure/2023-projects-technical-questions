@@ -3,17 +3,18 @@
 import { useState } from "react";
 import AlertModal from "../AlertModal";
 import styles from "./Table.module.css";
+import Update from "./Update"
 
 // !!!!!!!!!!!!!!!!!!!!
 // TODO is at line 68 !
 // !!!!!!!!!!!!!!!!!!!!
 
-interface AlertUpdate {
+export interface AlertUpdate {
   date: string,
   update: string
 }
 
-interface Alert {
+export interface Alert {
   alert: string,
   status: string,
   updates: AlertUpdate[]
@@ -45,7 +46,7 @@ export default function Table() {
       },
       {
         alert: 'Done!',
-        status: '<YOUR NAME>',
+        status: 'Dasyure',
         updates: []
       }
     ]
@@ -53,8 +54,8 @@ export default function Table() {
 
   return (
     <>
-      <AlertModal useContents={useContents} />
-      <div className={styles.myTable}>
+      <AlertModal useContents={useContents} content = {contents}/>
+      <div className={styles.myTable} id="table">
         <div className={styles.row}>
           {contents.columnTitles.map((item) => <div className={styles.item} key={item}>{item}</div>)}
         </div>
@@ -66,9 +67,7 @@ export default function Table() {
             <div className={styles.item}>
               {content.status}
             </div>
-            <div className={styles.item}>
-              {/* TODO: add updates */}
-            </div>
+            <Update updates={content.updates}/>
           </div>
         ))}
       </div>

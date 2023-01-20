@@ -2,23 +2,22 @@ import styles from "./Table.module.css";
 import { AlertUpdate } from "./Table";
 
 const UpdateRow = (props: {update: AlertUpdate}) => {
-    console.log(props.update);
-    return (
-        <div className={styles.rowUpdate}>
-            <div>{props.update.update}</div>
-            <div className={styles.rowUpdateDate}>{props.update.date}</div>
-        </div>
-    )
+  return (
+    <div className={styles.rowUpdate}>
+      <div>{props.update.update}</div>
+      <div className={styles.rowUpdateDate}>{props.update.date}</div>
+    </div>
+  )
 }
 
 const Update = (props: {updates: AlertUpdate[]}) => {
-    const rows = [];
+  const rows = [];
     for (const update of props.updates) rows.push(<UpdateRow update={update}/>);
-    return (
+  return (
     <div className={styles.updateContainer}>
-        {rows}
+      {rows}
     </div>
-    )
+  )
 }
 
 export default Update;
